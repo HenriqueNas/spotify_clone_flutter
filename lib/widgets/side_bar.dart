@@ -12,29 +12,35 @@ class SideBar extends StatelessWidget {
       color: Colors.black,
       padding: const EdgeInsets.all(8),
       child: Column(
+        mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: const [
-              Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-                size: 40,
-              ),
-              Text('Spotify', style: TextStyle(color: Colors.white)),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: const [
+                Icon(
+                  Spotify.spotify,
+                  color: Colors.white,
+                  size: 40,
+                ),
+                _Separator(value: 8),
+                Text(
+                  'Spotify',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ],
+            ),
           ),
-          const _Separator(value: 32),
+          const _Separator(value: 16),
           const _SideBarTile(
             icon: Spotify.home,
             text: 'Home',
           ),
-          const _Separator(),
           const _SideBarTile(
             icon: Spotify.search,
             text: 'Search',
           ),
-          const _Separator(),
           const _SideBarTile(
             icon: Spotify.note_beamed,
             text: 'Your Library',
@@ -44,17 +50,15 @@ class SideBar extends StatelessWidget {
             icon: Spotify.plus_squared,
             text: 'Create Playlist',
           ),
-          const _Separator(),
           const _SideBarTile(
             icon: Spotify.heart,
             text: 'Liked Songs',
           ),
-          const _Separator(),
           const _SideBarTile(
             icon: Icons.podcasts_rounded,
             text: 'Your Episodes',
           ),
-          const Divider(),
+          const Divider(color: Colors.white38),
           const _Playlists(),
         ],
       ),
@@ -97,17 +101,22 @@ class _SideBarTileState extends State<_SideBarTile> {
       cursor: SystemMouseCursors.click,
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: _isHovering ? Colors.white12 : Colors.transparent,
         ),
         child: Row(
           children: [
-            Icon(widget.icon, color: Colors.white, size: 28),
+            Icon(widget.icon, color: Colors.white, size: 22),
             const _Separator(value: 16),
-            Text(widget.text,
-                style: const TextStyle(color: Colors.white, fontSize: 16)),
+            Text(
+              widget.text,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
           ],
         ),
       ),
