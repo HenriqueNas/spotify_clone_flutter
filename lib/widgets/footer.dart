@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 100,
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
         color: Color(0xFF181818),
@@ -22,7 +22,7 @@ class Footer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _PlayerInfo(),
+          _ContentInfo(),
           _PlayerActions(),
           _SystemControls(),
         ],
@@ -31,16 +31,23 @@ class Footer extends StatelessWidget {
   }
 }
 
-class _PlayerInfo extends StatelessWidget {
-  const _PlayerInfo();
+class _ContentInfo extends StatefulWidget {
+  const _ContentInfo();
+
+  @override
+  State<_ContentInfo> createState() => _ContentInfoState();
+}
+
+class _ContentInfoState extends State<_ContentInfo> {
+  bool _liked = false;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Container(
-          width: 80,
-          height: 80,
+          width: 60,
+          height: 60,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
           child: const Placeholder(),
         ),
@@ -66,6 +73,14 @@ class _PlayerInfo extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(width: 32),
+        IconButton(
+          onPressed: () => setState(() => _liked = !_liked),
+          icon: Icon(
+            _liked ? Spotify.heart : Spotify.heart_empty,
+            color: _liked ? Colors.green : Colors.white,
+          ),
+        ),
       ],
     );
   }
@@ -77,7 +92,7 @@ class _PlayerActions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
@@ -97,7 +112,6 @@ class _PlayerActions extends StatelessWidget {
             IconButton(onPressed: () {}, icon: Icon(Spotify.loop)),
           ],
         ),
-        const SizedBox(height: 16),
         Row(
           children: [
             Text(

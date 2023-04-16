@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/footer.dart';
+import 'widgets/home_content.dart';
 import 'widgets/side_bar.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,11 +19,7 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     const SideBar(),
-                    Expanded(
-                      child: Container(
-                        color: Colors.blueGrey,
-                      ),
-                    ),
+                    Expanded(child: const HomeContent()),
                   ],
                 ),
               ),

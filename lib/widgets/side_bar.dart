@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 import '../config/spotify_icons.dart';
@@ -51,7 +52,7 @@ class SideBar extends StatelessWidget {
             text: 'Create Playlist',
           ),
           const _SideBarTile(
-            icon: Spotify.heart,
+            icon: Spotify.heart_empty,
             text: 'Liked Songs',
           ),
           const _SideBarTile(
@@ -132,13 +133,13 @@ class _Playlists extends StatelessWidget {
     return Expanded(
       child: ListView.separated(
         shrinkWrap: true,
-        itemCount: 80,
+        itemCount: 30,
         separatorBuilder: (_, __) => const _Separator(),
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
             child: Text(
-              'Playlist $index',
+              faker.color.color(),
               style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
           );
