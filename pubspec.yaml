@@ -21,6 +21,7 @@ flutter:
   assets:
     - assets/
     - assets/fonts/
+    - assets/screenshots/
   
   fonts:
     - family:  spotify

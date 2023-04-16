@@ -1,16 +1,38 @@
-# spotify_clone_flutter
+# Spotify Clone Flutter
 
-A new Flutter project.
+This is a challenge project.
+The goal is to clone de Spotify UI (not features).
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![Chrome](assets/screenshots/chrome.png "Chrome")
 
-A few resources to get you started if this is your first Flutter project:
+![MacOS](assets/screenshots/MacOS.png "MacOS")
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- First install Flutter SDK
+
+```bash
+# linux
+sudo snap install flutter --classic
+
+# mac
+brew cask install flutter
+
+# windows
+choco install flutter
+```
+
+- Clone this repository
+
+```bash
+git clone https://github.com/HenriqueNas/spotify_clone_flutter
+```
+
+- Then run the following commands:
+
+```bash
+flutter pub get
+flutter run
+```
