@@ -7,7 +7,7 @@ The goal is to clone de Spotify UI (not features).
 
 ![Chrome](assets/screenshots/chrome.png "Chrome")
 
-![MacOS](assets/screenshots/MacOS.png "MacOS")
+![MacOS](assets/screenshots/MacOs.png "MacOS")
 
 ## How to run
 
