@@ -23,7 +23,7 @@ import 'package:flutter/widgets.dart';
 class Spotify {
   Spotify._();
 
-  static const _kFontFam = 'Spotify';
+  static const _kFontFam = 'spotify';
   static const String? _kFontPkg = null;
 
   static const IconData monitor =
